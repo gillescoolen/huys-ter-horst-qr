@@ -1,8 +1,8 @@
-# octoscan
+# Octoscan
 
-A new Flutter project.
+A revolutionary QR scanner for iOS and Android.
 
 ## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+The QR Scanner we are currently using.
+[QR Scanner Package](https://pub.dartlang.org/packages/barcode_scan).

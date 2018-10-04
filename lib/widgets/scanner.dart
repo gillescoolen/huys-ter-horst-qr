@@ -3,6 +3,7 @@ import 'package:qr_mobile_vision/qr_camera.dart';
 import 'package:flutter/material.dart';
 
 class Scanner extends StatelessWidget {
+  bool scanned = false;
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -14,13 +15,16 @@ class Scanner extends StatelessWidget {
         child: QrCamera(
           formats: List<BarcodeFormats>.filled(1, BarcodeFormats.QR_CODE),
           qrCodeCallback: (code) {
+            if (!scanned) {
+              scanned = true;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SecondScreen(code: code),
+                ),
+              );
+            }
             print(code);
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SecondScreen(code: code),
-              ),
-            );
           },
           child: Center(
             child: Column(

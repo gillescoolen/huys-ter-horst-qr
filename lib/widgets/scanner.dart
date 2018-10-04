@@ -15,14 +15,12 @@ class Scanner extends StatelessWidget {
           formats: List<BarcodeFormats>.filled(1, BarcodeFormats.QR_CODE),
           qrCodeCallback: (code) {
             print(code);
-            if (code != "") {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SecondScreen(code: code),
-                ),
-              );
-            }
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SecondScreen(code: code),
+              ),
+            );
           },
           child: Center(
             child: Column(

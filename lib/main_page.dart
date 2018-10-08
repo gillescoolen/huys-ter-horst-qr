@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:octoscan/screens/error.dart';
+import 'package:octoscan/screens/history.dart';
 import 'package:octoscan/widgets/drawer_item.dart';
 import 'package:octoscan/screens/scanner.dart';
 
@@ -10,7 +12,7 @@ class MainPage extends StatefulWidget {
   final drawerItems = [
     DrawerItem("Scanner", Icons.camera),
     DrawerItem("Scan History", Icons.history),
-    DrawerItem("Events", Icons.event)
+    //DrawerItem("Events", Icons.event)
   ];
 
   @override
@@ -29,8 +31,10 @@ class _MainPageState extends State<MainPage> {
     switch (pos) {
       case 0:
         return Scanner();
+      case 1:
+        return History();
       default:
-        return Text("Error");
+        return ErrorScreen();
     }
   }
 

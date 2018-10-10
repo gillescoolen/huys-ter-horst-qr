@@ -1,4 +1,4 @@
-import 'package:octoscan/main_page.dart';
+import 'package:octoscan/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(new MyApp());

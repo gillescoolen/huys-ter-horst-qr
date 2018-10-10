@@ -19,56 +19,49 @@ class _ItemState extends State<Item> {
   final networkImages = List<NetworkImage>();
 
   List<NetworkImage> convertImages() {
+    networkImages.clear();
     images.forEach((image) => networkImages.add(NetworkImage(image)));
     return networkImages;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
-      ),
-      body: ListView(
-        children: <Widget>[
-          SizedBox(
-            height: 350.0,
-            child: Carousel(
-              images: convertImages(),
-              boxFit: BoxFit.cover,
-              autoplay: false,
-              overlayShadow: false,
-              dotBgColor: Colors.transparent,
-            ),
+    return ListView(
+      children: [
+        SizedBox(
+          height: 350.0,
+          child: Carousel(
+            images: convertImages(),
+            boxFit: BoxFit.cover,
+            autoplay: false,
+            overlayShadow: false,
+            dotBgColor: Colors.transparent,
+            dotSize: 6.0,
           ),
-          Container(
-            padding: EdgeInsets.all(15.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 32.0),
-                ),
-                Text(
-                  subtitle,
-                  style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                MarkdownBody(
-                  data: content,
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
+        ),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(fontSize: 32.0),
+              ),
+              Text(
+                subtitle,
+                style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              MarkdownBody(
+                data: content,
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }

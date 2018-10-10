@@ -4,10 +4,6 @@ import 'package:octoscan/screens/history.dart';
 import 'package:octoscan/widgets/drawer_item.dart';
 import 'package:octoscan/screens/scanner.dart';
 
-// TODO place this file in the appropriate folder
-// I don't know where I should place this page yet.
-// - Matthijs Kropholler. 4-10-2018 13:17
-
 class MainPage extends StatefulWidget {
   final drawerItems = [
     DrawerItem("Scanner", Icons.camera),

@@ -1,68 +1,60 @@
-import 'package:qr_mobile_vision/qr_mobile_vision.dart';
-import 'package:qr_mobile_vision/qr_camera.dart';
+import 'dart:async';
+import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class Scanner extends StatelessWidget {
-  bool scanned = false;
+class Scanner extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-    return Center(
-      child: SizedBox(
-        width: width,
-        height: height,
-        child: QrCamera(
-          formats: List<BarcodeFormats>.filled(1, BarcodeFormats.QR_CODE),
-          qrCodeCallback: (code) {
-            if (!scanned) {
-              scanned = true;
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SecondScreen(code: code),
-                ),
-              );
-            }
-            print(code);
-          },
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  width: 200.0,
-                  height: 200.0,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white, width: 2.0)),
-                ),
-                Text(
-                  'Scan a code!',
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  _ScannerState createState() => new _ScannerState();
 }
 
-class SecondScreen extends StatelessWidget {
-  final String code;
+class _ScannerState extends State<Scanner> {
+  String code = "";
 
-  SecondScreen({Key key, @required this.code}) : super(key: key);
+  @override
+  initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Screen"),
+      body: Center(
+        child: Text(
+          code,
+          style: TextStyle(
+            color: Colors.lightBlue,
+            fontSize: 20.0,
+          ),
+        ),
       ),
-      body: Text(code),
+      floatingActionButton: FloatingActionButton(
+        onPressed: scan,
+        tooltip: 'Scan a QR code!',
+        child: Icon(
+          Icons.camera_alt,
+          color: Colors.white,
+        ),
+      ),
     );
+  }
+
+  Future scan() async {
+    try {
+      String code = await BarcodeScanner.scan();
+      setState(() => this.code = code);
+    } on PlatformException catch (e) {
+      if (e.code == BarcodeScanner.CameraAccessDenied) {
+        setState(() {
+          this.code = 'No camera permission!';
+        });
+      } else {
+        setState(() => this.code = 'Unknown error: $e');
+      }
+    } on FormatException {
+      setState(() => this.code = 'null (User used the back button!)');
+    } catch (e) {
+      setState(() => this.code = 'Unknown error: $e');
+    }
   }
 }

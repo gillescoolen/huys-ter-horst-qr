@@ -2,6 +2,9 @@ import 'dart:async';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+final String icon = 'lib/assets/icon.svg';
 
 class Scanner extends StatefulWidget {
   @override
@@ -20,11 +23,32 @@ class _ScannerState extends State<Scanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          code,
-          style: TextStyle(
-            color: Colors.lightBlue,
-            fontSize: 20.0,
+        child: Padding(
+          padding: EdgeInsets.only(top: 150.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SvgPicture.asset(
+                icon,
+                width: 150.0,
+                height: 150.0,
+              ),
+              Text(
+                'Welcome to Waifu Castle',
+                style: TextStyle(
+                  color: Colors.blueGrey,
+                  fontSize: 20.0,
+                ),
+              ),
+              Text(
+                code,
+                style: TextStyle(
+                  color: Colors.pink,
+                  fontSize: 12.0,
+                ),
+              ),
+            ],
           ),
         ),
       ),

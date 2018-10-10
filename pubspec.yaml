@@ -21,7 +21,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   barcode_scan: ^0.0.3
   carousel_pro: ^0.0.13
-
+  flutter_svg: ^0.6.1+1
 
 dev_dependencies:
   flutter_test:
@@ -43,6 +43,10 @@ flutter:
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
+
+  assets:
+    - lib/assets/icon.svg
+    - lib/assets/header.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

@@ -3,10 +3,11 @@ import 'package:octoscan/screens/error.dart';
 import 'package:octoscan/screens/history.dart';
 import 'package:octoscan/widgets/drawer_item.dart';
 import 'package:octoscan/screens/scanner.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MainPage extends StatefulWidget {
   final drawerItems = [
-    DrawerItem("Scanner", Icons.camera),
+    DrawerItem("Scanner", Icons.camera_alt),
     DrawerItem("Scan History", Icons.history),
     //DrawerItem("Events", Icons.event)
   ];
@@ -65,12 +66,26 @@ class _MainPageState extends State<MainPage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text(
-                'Kasteel Huys ter Hof',
-                style: TextStyle(color: Colors.white),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.lightBlue,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    'lib/assets/icon.svg',
+                    height: 100.0,
+                    width: 100.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: Text(
+                      'Welcome to Waifu Castle',
+                      style: TextStyle(
+                        color: Colors.blueGrey,
+                        fontSize: 16.0,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Column(children: drawerOptions)

@@ -14,8 +14,11 @@ class ItemScreen extends StatelessWidget {
         ),
         home: Scaffold(
             appBar: AppBar(
-              leading:
-                  IconButton(icon: Icon(Icons.arrow_back), onPressed: () => {}),
+              leading: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
             ),
             body: _BuildItemScreen()));
   }

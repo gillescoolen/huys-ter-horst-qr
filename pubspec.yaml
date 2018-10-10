@@ -22,6 +22,7 @@ dependencies:
   barcode_scan: ^0.0.3
   carousel_pro: ^0.0.13
   flutter_svg: ^0.6.1+1
+  flutter_markdown: ^0.2.0
 
 dev_dependencies:
   flutter_test:

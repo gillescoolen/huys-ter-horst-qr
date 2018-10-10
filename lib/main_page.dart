@@ -78,7 +78,7 @@ class _MainPageState extends State<MainPage> {
                   Padding(
                     padding: EdgeInsets.only(top: 10.0),
                     child: Text(
-                      'Welcome to Waifu Castle',
+                      'Welcome to Huys Castle',
                       style: TextStyle(
                         color: Colors.blueGrey,
                         fontSize: 16.0,

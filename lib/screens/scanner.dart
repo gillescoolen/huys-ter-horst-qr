@@ -36,7 +36,7 @@ class _ScannerState extends State<Scanner> {
                 height: 150.0,
               ),
               Text(
-                'Welcome to Waifu Castle',
+                'Welcome to Huys Castle',
                 style: TextStyle(
                   color: Colors.blueGrey,
                   fontSize: 20.0,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-
-void main() => runApp(ItemScreen());
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class ItemScreen extends StatelessWidget {
   @override
@@ -31,7 +30,7 @@ class _BuildItemScreen extends StatelessWidget {
   final itemImages = [
     'https://upload.wikimedia.org/wikipedia/commons/2/2f/Hentai_-_yuuree-redraw.jpg',
     'http://hentaihaven.org/package/2016/12/HH-Toshi-Densetsu-Series-EP-3-DVD-BE8C2E68.mp4_snapshot_05.40_2016.12.04_15.26.31.jpg',
-    'http://images.jpost.com/image/upload/f_auto,fl_lossy/t_Article2016_ControlFaceDetect/417440'
+    'http://images.jpost.com/image/upload/f_auto,fl_lossy/t_Article2016_ControlFaceDetect/417440',
   ];
 
   @override
@@ -43,7 +42,8 @@ class _BuildItemScreen extends StatelessWidget {
             child: Carousel(
               images: [
                 NetworkImage(itemImages[0]),
-                NetworkImage(itemImages[1])
+                NetworkImage(itemImages[1]),
+                NetworkImage(itemImages[2]),
               ],
               boxFit: BoxFit.cover,
               autoplay: false,
@@ -51,8 +51,7 @@ class _BuildItemScreen extends StatelessWidget {
               dotBgColor: Colors.transparent,
             )),
         Container(
-          padding:
-              EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0, bottom: 15.0),
+          padding: EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -67,7 +66,7 @@ class _BuildItemScreen extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-              Text(itemText),
+              MarkdownBody(data: itemText),
             ],
           ),
         )

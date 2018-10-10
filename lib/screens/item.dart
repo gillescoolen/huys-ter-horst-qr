@@ -7,7 +7,11 @@ class ItemScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Scanner',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.pink,
+        ),
         home: Scaffold(
             appBar: AppBar(
               leading:
@@ -18,12 +22,13 @@ class ItemScreen extends StatelessWidget {
 }
 
 class _BuildItemScreen extends StatelessWidget {
-  final itemName = 'Paiting Name';
-  final itemDescription = 'P. Ainter';
+  final itemName = 'Haydar\'s Lievelings Foto\'s ';
+  final itemDescription = 'Geile beer';
   final itemText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing eli';
   final itemImages = [
-    'https://i0.wp.com/www.scientias.nl/wp-content/uploads/2018/09/804px-Mona_Lisa_by_Leonardo_da_Vinci_from_C2RMF_retouched.jpg?resize=750%2C1118&ssl=1',
-    'https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'
+    'https://upload.wikimedia.org/wikipedia/commons/2/2f/Hentai_-_yuuree-redraw.jpg',
+    'http://hentaihaven.org/package/2016/12/HH-Toshi-Densetsu-Series-EP-3-DVD-BE8C2E68.mp4_snapshot_05.40_2016.12.04_15.26.31.jpg',
+    'http://images.jpost.com/image/upload/f_auto,fl_lossy/t_Article2016_ControlFaceDetect/417440'
   ];
 
   @override

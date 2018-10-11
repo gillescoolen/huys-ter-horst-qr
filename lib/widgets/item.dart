@@ -8,13 +8,12 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  final title = 'Haydar\'s Lievelings Foto\'s ';
-  final subtitle = 'Geile beer';
-  final content = 'Lorem ipsum dolor sit amet, consectetuer adipiscing eli';
+  final title = 'Gilles en Matthijs';
+  final subtitle = 'Jullie vriendinnen';
+  final content = 'Lekkere geile fotos voor ons';
   final images = [
-    'https://myanimelist.cdn-dena.com/images/characters/3/361761.jpg',
-    'https://myanimelist.cdn-dena.com/images/characters/15/316061.jpg',
-    'https://myanimelist.cdn-dena.com/images/characters/14/284324.jpg',
+    'https://www.famousbirthdays.com/faces/granny-image.jpg',
+    'http://www.hun.is/wp-content/uploads/2013/08/old-lady.jpg',
   ];
 
   final networkImages = List<NetworkImage>();

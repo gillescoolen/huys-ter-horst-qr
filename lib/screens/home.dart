@@ -8,7 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class MainPage extends StatefulWidget {
   final drawerItems = [
     DrawerItem("Scanner", Icons.camera_alt),
-    DrawerItem("Scan History", Icons.history),
+    //DrawerItem("Scan History", Icons.history),
     //DrawerItem("Events", Icons.event)
   ];
 
@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
       case 0:
         return Scanner();
       case 1:
-        return History();
+      //return History();
       default:
         return ErrorScreen();
     }

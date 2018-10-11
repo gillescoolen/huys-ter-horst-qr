@@ -4,16 +4,16 @@ import 'package:huys_ter_horst/widgets/history_item.dart';
 import 'dart:math';
 
 String _randomString(int length) {
-  var rand = new Random();
-  var codeUnits = new List.generate(length, (index) {
+  var rand = Random();
+  var codeUnits = List.generate(length, (index) {
     return rand.nextInt(33) + 89;
   });
 
-  return new String.fromCharCodes(codeUnits);
+  return String.fromCharCodes(codeUnits);
 }
 
 class History extends StatelessWidget {
-  List<HistoryItem> historyItems = new List<HistoryItem>();
+  final List<HistoryItem> historyItems = List<HistoryItem>();
 
   _readHistoryFromCache() {
     var testStrings = List<String>();
@@ -43,7 +43,7 @@ class History extends StatelessWidget {
         final item = historyItems[index];
         return ListTile(
             title: Text(item.title),
-            trailing: new Icon(Icons.arrow_forward),
+            trailing: Icon(Icons.arrow_forward),
             onTap: () {
               Navigator.push(
                 context,

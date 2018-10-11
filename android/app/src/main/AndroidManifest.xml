@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.octoscan">
+    package="com.example.huys_ter_horst">
 
     <!-- The INTERNET permission is required for development. Specifically,
          flutter needs it to communicate with the running application
@@ -15,7 +15,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="octoscan"
+        android:label="Huys ter Horst"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

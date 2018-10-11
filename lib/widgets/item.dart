@@ -16,6 +16,7 @@ class _ItemState extends State<Item> {
     'https://myanimelist.cdn-dena.com/images/characters/15/316061.jpg',
     'https://myanimelist.cdn-dena.com/images/characters/14/284324.jpg',
   ];
+
   final networkImages = List<NetworkImage>();
 
   List<NetworkImage> convertImages() {

@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:octoscan/widgets/history_item.dart';
+import 'package:huys_ter_horst/widgets/history_item.dart';
 
 import 'dart:math';
 
 String _randomString(int length) {
   var rand = new Random();
-  var codeUnits = new List.generate(
-      length,
-          (index){
-        return rand.nextInt(33)+89;
-      }
-  );
+  var codeUnits = new List.generate(length, (index) {
+    return rand.nextInt(33) + 89;
+  });
 
   return new String.fromCharCodes(codeUnits);
 }
-
 
 class History extends StatelessWidget {
   List<HistoryItem> historyItems = new List<HistoryItem>();
@@ -51,7 +47,8 @@ class History extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Text("Not implemented yet!")),
+                MaterialPageRoute(
+                    builder: (context) => Text("Not implemented yet!")),
               );
             });
       },

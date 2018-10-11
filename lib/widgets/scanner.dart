@@ -3,7 +3,7 @@ import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:octoscan/screens/item.dart';
+import 'package:huys_ter_horst/screens/item.dart';
 
 final String icon = 'lib/assets/icon.svg';
 

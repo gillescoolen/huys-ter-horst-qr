@@ -1,4 +1,4 @@
-package com.example.octoscan;
+package com.example.huys_ter_horst;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

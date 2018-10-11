@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:octoscan/widgets/item.dart';
+import 'package:huys_ter_horst/widgets/item.dart';
 
 class ItemScreen extends StatelessWidget {
   @override

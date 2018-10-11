@@ -1,5 +1,5 @@
-name: octoscan
-description: QR Scanning app for Kasteel Huys ter Hof.
+name: huys_ter_horst
+description: QR Scanning app for Kasteel Huys ter Horst.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43

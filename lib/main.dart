@@ -20,8 +20,9 @@ class _MyAppState extends State<MyApp> {
       title: 'Huys ter Horst',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
+          brightness: Brightness.light,
+          accentColor: Colors.amber,
+          primaryColor: Colors.amber),
       home: MainPage(),
     );
   }

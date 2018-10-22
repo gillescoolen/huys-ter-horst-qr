@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:huys_ter_horst/screens/error.dart';
-import 'package:huys_ter_horst/screens/history.dart';
+//import 'package:huys_ter_horst/screens/history.dart';
 import 'package:huys_ter_horst/widgets/drawer_item.dart';
 import 'package:huys_ter_horst/widgets/scanner.dart';
 import 'package:flutter_svg/flutter_svg.dart';

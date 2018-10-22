@@ -8,8 +8,9 @@ class ItemScreen extends StatelessWidget {
       title: 'Scanner',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
+          brightness: Brightness.light,
+          accentColor: Colors.amber,
+          primaryColor: Colors.amber),
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(

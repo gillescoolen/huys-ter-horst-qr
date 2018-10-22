@@ -1,9 +1,9 @@
-import 'package:meta/meta.dart';
+//import 'package:meta/meta.dart';
 
 class HistoryItem {
   final String title;
 
   const HistoryItem(
-    @required this.title,
+    /*@required*/ this.title,
   ) : assert(title != null);
 }

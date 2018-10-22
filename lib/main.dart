@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           brightness: Brightness.light,
-          accentColor: Colors.amber,
+          accentColor: Colors.amber[400],
           primaryColor: Colors.amber),
       home: MainPage(),
     );

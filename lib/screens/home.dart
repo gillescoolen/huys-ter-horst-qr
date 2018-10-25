@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:huys_ter_horst/screens/error.dart';
-//import 'package:huys_ter_horst/screens/history.dart';
+import 'package:huys_ter_horst/screens/history.dart';
 import 'package:huys_ter_horst/widgets/drawer_item.dart';
 import 'package:huys_ter_horst/widgets/scanner.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:huys_ter_horst/screens/about.dart';
+import 'package:huys_ter_horst/screens/dairy.dart';
 
 class MainPage extends StatefulWidget {
   final drawerItems = [
     DrawerItem("Scanner", Icons.camera_alt),
     DrawerItem("Over Ons", Icons.business),
-    //DrawerItem("Events", Icons.event)
+    DrawerItem("Agenda", Icons.view_agenda),
+    DrawerItem("Geschiedenis", Icons.history)
   ];
 
   @override
@@ -31,6 +33,10 @@ class _MainPageState extends State<MainPage> {
         return Scanner();
       case 1:
         return About();
+      case 2:
+        return Dairy();
+      case 3:
+        return History();
       default:
         return ErrorScreen();
     }

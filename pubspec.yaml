@@ -23,13 +23,8 @@ dependencies:
   carousel_pro: ^0.0.13
   flutter_svg: ^0.6.1+1
   flutter_markdown: ^0.2.0
-<<<<<<< HEAD
-  cloud_firestore: ^0.8.0 
-  
-=======
   cloud_firestore: ^0.8.0
 
->>>>>>> master
 dev_dependencies:
   flutter_test:
     sdk: flutter

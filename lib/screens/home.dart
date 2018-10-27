@@ -11,7 +11,7 @@ class MainPage extends StatefulWidget {
   final drawerItems = [
     DrawerItem("Scanner", Icons.camera_alt),
     DrawerItem("Agenda", Icons.view_agenda),
-    DrawerItem("Geschiedenis", Icons.history)
+    DrawerItem("Geschiedenis", Icons.history),
     DrawerItem("Over Ons", Icons.business),
   ];
 
@@ -33,7 +33,6 @@ class _MainPageState extends State<MainPage> {
         return Scanner();
       case 1:
         return About();
-        return History();
       case 2:
         return Agenda();
       case 3:

@@ -9,20 +9,11 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  final title = 'Haydar P.';
-  final subtitle = 'Bang voor 2D meisjes';
-  final content = 'test';
-  final images = [
-    'https://vignette.wikia.nocookie.net/typemoon/images/7/7a/RinUCopening.jpg/revision/latest/scale-to-width-down/300?cb=20141020220532',
-    'https://static.zerochan.net/Tohsaka.Rin.full.2060968.jpg',
-    'https://i.kym-cdn.com/photos/images/original/001/308/649/d53.png',
-  ];
-
   DocumentSnapshot itemData;
 
   final networkImages = List<NetworkImage>();
 
-  List<NetworkImage> _convertImages() {
+  List<NetworkImage> _convertImages(images) {
     networkImages.clear();
     images.forEach((image) => networkImages.add(NetworkImage(image)));
     return networkImages;
@@ -33,18 +24,17 @@ class _ItemState extends State<Item> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
-    item();
-    return Text(itemData['title'].toString());
-  }
+    _getData();
+    final item = ItemData.fromSnapshot(itemData);
 
-  Widget yeeter(BuildContext context) {
     return ListView(
       children: [
         SizedBox(
           height: 350.0,
           child: Carousel(
-            images: _convertImages(),
+            images: _convertImages(item.images),
             boxFit: BoxFit.cover,
             autoplay: false,
             overlayShadow: false,
@@ -58,7 +48,7 @@ class _ItemState extends State<Item> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'yeet',
+                item.title,
                 style: TextStyle(fontSize: 32.0),
               ),
               Text(
@@ -78,7 +68,7 @@ class _ItemState extends State<Item> {
     );
   }
 
-  Future item() async {
+  Future _getData() async {
     try {
       DocumentSnapshot itemData = await Firestore.instance
           .collection('items')
@@ -98,19 +88,20 @@ class ItemData {
   final String title;
   final String subtitle;
   final String content;
+  final List<dynamic> images;
   final DocumentReference reference;
 
   ItemData.fromMap(Map<String, dynamic> map, {this.reference})
       : assert(map['title'] != null),
         assert(map['subtitle'] != null),
         assert(map['content'] != null),
-        assert(map['subtitle'] != null),
+        assert(map['images'] != null),
         title = map['title'],
+        subtitle = map['subtitle'],
         content = map['content'],
-        subtitle = map['subtitle'];
+        images = map['images'];
   ItemData.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
-
   @override
   String toString() => "ItemData<$title:$subtitle>";
 }

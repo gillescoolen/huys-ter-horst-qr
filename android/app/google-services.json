@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "251107191570",
+    "firebase_url": "https://kasteelapp.firebaseio.com",
+    "project_id": "kasteelapp",
+    "storage_bucket": "kasteelapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251107191570:android:c8b7b6127c56e994",
+        "android_client_info": {
+          "package_name": "com.example.huys_ter_horst"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251107191570-k5hie4s0kb4q02qti15tp2ms1dejfeod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg2MEP_GgrZSL8TUWXn0N1ye4EgpApPqI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

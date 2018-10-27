@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:huys_ter_horst/widgets/dairy_item.dart';
+import 'package:huys_ter_horst/widgets/agenda_item.dart';
 
-class Dairy extends StatelessWidget {
+class Agenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -9,7 +9,7 @@ class Dairy extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: Theme.of(context),
       home: Scaffold(
-        body: DairyItem(),
+        body: AgendaItem(),
       ),
     );
   }

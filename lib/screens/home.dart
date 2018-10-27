@@ -5,7 +5,7 @@ import 'package:huys_ter_horst/widgets/drawer_item.dart';
 import 'package:huys_ter_horst/widgets/scanner.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:huys_ter_horst/screens/about.dart';
-import 'package:huys_ter_horst/screens/dairy.dart';
+import 'package:huys_ter_horst/screens/Agenda.dart';
 
 class MainPage extends StatefulWidget {
   final drawerItems = [
@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
       case 1:
         return About();
       case 2:
-        return Dairy();
+        return Agenda();
       case 3:
         return History();
       default:

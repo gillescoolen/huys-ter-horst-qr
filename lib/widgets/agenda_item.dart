@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
-class DairyItem extends StatelessWidget {
+class AgendaItem extends StatelessWidget {
   final content = 'In het seizoen (van april t/m oktober) worden er op aanvraag' +
       'rondleidingen verzorgd mits er een rondleider beschikbaar is. Wij vragen een kleine vergoeding p.p.,' +
       'kinderen t/m 12 jaar gratis. '

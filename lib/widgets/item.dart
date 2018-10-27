@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:huys_ter_horst/screens/error.dart';
 
 class Item extends StatefulWidget {
+  String code = '';
+
+  Item(this.code);
+
   @override
-  _ItemState createState() => new _ItemState();
+  _ItemState createState() => new _ItemState(this.code);
 }
 
 class _ItemState extends State<Item> {
   DocumentSnapshot itemData;
+  var bool;
+  String code = "";
+
+  _ItemState(this.code);
 
   final networkImages = List<NetworkImage>();
 
@@ -27,6 +36,11 @@ class _ItemState extends State<Item> {
   @override
   Widget build(BuildContext context) {
     _getData();
+    if (itemData == null)
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+
     final item = ItemData.fromSnapshot(itemData);
 
     return ListView(
@@ -52,14 +66,14 @@ class _ItemState extends State<Item> {
                 style: TextStyle(fontSize: 32.0),
               ),
               Text(
-                'yaaaaayeeeeet',
+                item.subtitle,
                 style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.w700),
               ),
               SizedBox(
-                height: 20.0,
+                height: 10.0,
               ),
               MarkdownBody(
-                data: 'content',
+                data: item.content,
               ),
             ],
           ),
@@ -70,14 +84,22 @@ class _ItemState extends State<Item> {
 
   Future _getData() async {
     try {
+      Future.doWhile(bool);
       DocumentSnapshot itemData = await Firestore.instance
           .collection('items')
-          .document('AgO44JyheBo02nexRRI4')
+          .document(this.code)
           .get();
-      setState(() {
-        this.itemData = itemData;
-      });
-      print(itemData.documentID);
+      if (itemData.exists) {
+        setState(() {
+          this.itemData = itemData;
+        });
+      } else {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ErrorScreen()),
+        );
+        bool = false;
+      }
     } catch (e) {
       print(e);
     }
@@ -100,8 +122,7 @@ class ItemData {
         subtitle = map['subtitle'],
         content = map['content'],
         images = map['images'];
+
   ItemData.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
-  @override
-  String toString() => "ItemData<$title:$subtitle>";
 }

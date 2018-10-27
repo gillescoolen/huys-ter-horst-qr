@@ -70,7 +70,7 @@ class _ScannerState extends State<Scanner> {
       setState(() => this.code = code);
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ItemScreen()),
+        MaterialPageRoute(builder: (context) => ItemScreen(this.code)),
       );
     } on PlatformException catch (e) {
       if (e.code == BarcodeScanner.CameraAccessDenied) {

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:huys_ter_horst/widgets/item.dart';
 
 class ItemScreen extends StatelessWidget {
+  String code = '';
+
+  ItemScreen(this.code);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +20,7 @@ class ItemScreen extends StatelessWidget {
                 Navigator.pop(context);
               }),
         ),
-        body: Item(),
+        body: Item(this.code),
       ),
     );
   }

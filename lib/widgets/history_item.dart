@@ -1,9 +1,8 @@
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
 
-class HistoryItem {
-  final String title;
-
-  const HistoryItem(
-    @required this.title,
-  ) : assert(title != null);
+class HistoryItem extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
 }

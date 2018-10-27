@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:huys_ter_horst/widgets/history_item.dart';
+import 'package:huys_ter_horst/widgets/agenda_item.dart';
 
-class History extends StatelessWidget {
+class Agenda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -9,7 +9,7 @@ class History extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: Theme.of(context),
       home: Scaffold(
-        body: HistoryItem(),
+        body: AgendaItem(),
       ),
     );
   }

@@ -6,6 +6,7 @@ import 'package:huys_ter_horst/widgets/scanner.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:huys_ter_horst/screens/about.dart';
 import 'package:huys_ter_horst/screens/Agenda.dart';
+import 'package:huys_ter_horst/screens/history.dart';
 
 class MainPage extends StatefulWidget {
   final drawerItems = [
@@ -32,10 +33,11 @@ class _MainPageState extends State<MainPage> {
       case 0:
         return Scanner();
       case 1:
-        return About();
-      case 2:
         return Agenda();
+      case 2:
+        return History();
       case 3:
+        return About();
       default:
         return ErrorScreen();
     }

@@ -12,8 +12,8 @@ class AgendaItem extends StatelessWidget {
   final adress = 'Stichting kasteel Huys ter Horst\n' +
       'p/a Pr. Margrietstraat 24\n' +
       '5961 BL Horst\n';
-  final title = 'Bezoekadres';
-  final subtitle = 'Agenda';
+  final subtitle = 'Bezoekadres';
+  final title = 'Agenda';
   final images = [
     'http://kasteelhuysterhorst.nl/fotos/luchtfoto.jpg',
     'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg',

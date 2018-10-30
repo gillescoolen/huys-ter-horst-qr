@@ -19,7 +19,7 @@ class AboutItem extends StatelessWidget {
       'p/a Pr. Margrietstraat 24\n' +
       '5961 BL Horst\n';
   final subtitle = 'Adres';
-  final title = 'Stichting Kasteel Huys Ter Horst';
+  final title = 'Kasteel Huys Ter Horst';
   final images = [
     'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg',
     'http://kasteelhuysterhorst.nl/fotos/luchtfoto.jpg',

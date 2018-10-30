@@ -36,17 +36,10 @@ class _ScannerState extends State<Scanner> {
                 height: 150.0,
               ),
               Text(
-                'Welcome to Huys Castle',
+                'Huys ter Horst QR',
                 style: TextStyle(
                   color: Colors.blueGrey,
                   fontSize: 20.0,
-                ),
-              ),
-              Text(
-                code,
-                style: TextStyle(
-                  color: Colors.pink,
-                  fontSize: 12.0,
                 ),
               ),
             ],

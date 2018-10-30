@@ -10,9 +10,9 @@ import 'package:huys_ter_horst/screens/history.dart';
 class MainPage extends StatefulWidget {
   final drawerItems = [
     DrawerItem("Scanner", Icons.camera_alt),
-    DrawerItem("Agenda", Icons.view_agenda),
-    DrawerItem("Geschiedenis", Icons.history),
     DrawerItem("Over Ons", Icons.business),
+    DrawerItem("Agenda", Icons.view_agenda),
+    //DrawerItem("Geschiedenis", Icons.history),
   ];
 
   @override
@@ -32,11 +32,11 @@ class _MainPageState extends State<MainPage> {
       case 0:
         return Scanner();
       case 1:
-        return Agenda();
-      case 2:
-        return History();
-      case 3:
         return About();
+      case 2:
+        return Agenda();
+      case 3:
+        return History();
       default:
         return ErrorScreen();
     }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class AgendaItem extends StatelessWidget {
   final content = 'In het seizoen (van april t/m oktober) worden er op aanvraag' +
@@ -13,15 +14,35 @@ class AgendaItem extends StatelessWidget {
       '5961 BL Horst\n';
   final title = 'Bezoekadres';
   final subtitle = 'Agenda';
-  final url = 'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg';
+  final images = [
+    'http://kasteelhuysterhorst.nl/fotos/luchtfoto.jpg',
+    'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg',
+    'http://kasteelhuysterhorst.nl/fotos/kasteel1.jpg'
+  ];
+
+  List<NetworkImage> _convertImages(images) {
+    final networkImages = List<NetworkImage>();
+
+    networkImages.clear();
+    images.forEach((image) => networkImages.add(NetworkImage(image)));
+    return networkImages;
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       padding: EdgeInsets.all(0.0),
       children: [
-        Image(
-          image: NetworkImage(url),
+        SizedBox(
+          height: 350.0,
+          child: Carousel(
+            images: _convertImages(images),
+            boxFit: BoxFit.cover,
+            autoplay: false,
+            overlayShadow: false,
+            dotBgColor: Colors.transparent,
+            dotSize: 6.0,
+          ),
         ),
         Container(
           padding: EdgeInsets.all(15.0),
@@ -53,48 +74,5 @@ class AgendaItem extends StatelessWidget {
         )
       ],
     );
-    /* return ListView(
-      children: [
-        Container(
-          padding: EdgeInsets.only(
-            left: 15.0,
-            right: 15.0,
-            bottom: 15.0,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(adresTitel,
-                        style: Theme.of(context).textTheme.headline),
-                    MarkdownBody(
-                      data: adres,
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 5.0),
-                child: Text(
-                  subTitel,
-                  style: Theme.of(context).textTheme.title,
-                ),
-              ),
-              MarkdownBody(
-                data: content,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.network(imageUrl),
-              ),
-            ],
-          ),
-        )
-      ],
-    ); */
   }
 }

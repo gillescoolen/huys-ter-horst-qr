@@ -20,9 +20,11 @@ class _ItemState extends State<Item> {
 
   _ItemState(this.code);
 
-  final networkImages = List<NetworkImage>();
+  //final networkImages = List<NetworkImage>();
 
   List<NetworkImage> _convertImages(images) {
+    final networkImages = List<NetworkImage>();
+
     networkImages.clear();
     images.forEach((image) => networkImages.add(NetworkImage(image)));
     return networkImages;

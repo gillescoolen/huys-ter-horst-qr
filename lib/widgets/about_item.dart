@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class AboutItem extends StatelessWidget {
   final content = 'Momenteel wordt de kasteelruïne geconsolideerd en gerevitaliseerd door de Stichting kasteel Huys ter Horst\n' +
@@ -14,48 +15,66 @@ class AboutItem extends StatelessWidget {
       'publiceerde de stichting in september 2001 in de nota “Huis ter Horst, een toekomst voor een ruïne” haar ' +
       'visie op de invulling van de gewenste en noodzakelijke werkzaamheden aan de ruïne en het omliggende gebied.' +
       'De eerste stappen werden gezet, hierna werd begonnen met de uitvoering van de plannen.\n';
-  final adres = 'Stichting kasteel Huys ter Horst\n' +
+  final adress = 'Stichting kasteel Huys ter Horst\n' +
       'p/a Pr. Margrietstraat 24\n' +
       '5961 BL Horst\n';
-  final adresTitel = 'Adres';
-  final subTitel = 'Stichting Kasteel Huys Ter Horst';
+  final subtitle = 'Adres';
+  final title = 'Stichting Kasteel Huys Ter Horst';
+  final images = [
+    'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg',
+    'http://kasteelhuysterhorst.nl/fotos/luchtfoto.jpg',
+    'http://kasteelhuysterhorst.nl/fotos/kasteel1.jpg'
+  ];
+
+  List<NetworkImage> _convertImages(images) {
+    final networkImages = List<NetworkImage>();
+
+    networkImages.clear();
+    images.forEach((image) => networkImages.add(NetworkImage(image)));
+    return networkImages;
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: EdgeInsets.all(0.0),
       children: [
-        Container(
-          padding: EdgeInsets.only(
-            left: 15.0,
-            right: 15.0,
-            bottom: 15.0,
+        SizedBox(
+          height: 350.0,
+          child: Carousel(
+            images: _convertImages(images),
+            boxFit: BoxFit.cover,
+            autoplay: false,
+            overlayShadow: false,
+            dotBgColor: Colors.transparent,
+            dotSize: 6.0,
           ),
+        ),
+        Container(
+          padding: EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(adresTitel,
-                        style: Theme.of(context).textTheme.headline),
-                    MarkdownBody(
-                      data: adres,
-                    ),
-                  ],
-                ),
+              Text(
+                title,
+                style: TextStyle(fontSize: 32.0),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 5.0),
-                child: Text(
-                  subTitel,
-                  style: Theme.of(context).textTheme.title,
-                ),
+              Text(
+                subtitle,
+                style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              MarkdownBody(
+                data: adress,
+              ),
+              SizedBox(
+                height: 10.0,
               ),
               MarkdownBody(
                 data: content,
-              )
+              ),
             ],
           ),
         )

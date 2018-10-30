@@ -6,18 +6,54 @@ class AgendaItem extends StatelessWidget {
       'rondleidingen verzorgd mits er een rondleider beschikbaar is. Wij vragen een kleine vergoeding p.p.,' +
       'kinderen t/m 12 jaar gratis. '
       'Voor een rondleiding. Informeer op nummer 06-16969913\n\n' +
-      'Voor vragen over de toegang tot en gebruik van kasteel Huys ter Horst kunt u op dit' +
-      'e-mail adres: rondleiding@kasteelhuysterhorst.nl terecht. ';
-  final adres = 'Stichting kasteel Huys ter Horst\n' +
+      'Voor vragen over de toegang tot en gebruik van kasteel Huys ter Horst kunt u op dit ' +
+      'e-mail adres: **rondleiding@kasteelhuysterhorst.nl** terecht. ';
+  final adress = 'Stichting kasteel Huys ter Horst\n' +
       'p/a Pr. Margrietstraat 24\n' +
       '5961 BL Horst\n';
-  final adresTitel = 'Bezoekadres';
-  final subTitel = 'Agenda';
-  final imageUrl = 'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg';
+  final title = 'Bezoekadres';
+  final subtitle = 'Agenda';
+  final url = 'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg';
 
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: EdgeInsets.all(0.0),
+      children: [
+        Image(
+          image: NetworkImage(url),
+        ),
+        Container(
+          padding: EdgeInsets.all(15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: TextStyle(fontSize: 32.0),
+              ),
+              Text(
+                subtitle,
+                style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              MarkdownBody(
+                data: adress,
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              MarkdownBody(
+                data: content,
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+    /* return ListView(
       children: [
         Container(
           padding: EdgeInsets.only(
@@ -59,6 +95,6 @@ class AgendaItem extends StatelessWidget {
           ),
         )
       ],
-    );
+    ); */
   }
 }

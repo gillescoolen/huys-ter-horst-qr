@@ -3,6 +3,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:huys_ter_horst/screens/error.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Item extends StatefulWidget {
   String code = '';
@@ -19,8 +20,6 @@ class _ItemState extends State<Item> {
   String code = "";
 
   _ItemState(this.code);
-
-  //final networkImages = List<NetworkImage>();
 
   List<NetworkImage> _convertImages(images) {
     final networkImages = List<NetworkImage>();
@@ -48,7 +47,7 @@ class _ItemState extends State<Item> {
     return ListView(
       children: [
         SizedBox(
-          height: 350.0,
+          height: 550.0,
           child: Carousel(
             images: _convertImages(item.images),
             boxFit: BoxFit.cover,
@@ -65,23 +64,28 @@ class _ItemState extends State<Item> {
             children: [
               Text(
                 item.title,
-                style: TextStyle(fontSize: 32.0),
+                style: TextStyle(fontSize: 24.0),
               ),
               Text(
                 item.subtitle,
-                style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w700),
               ),
               SizedBox(
                 height: 10.0,
               ),
               MarkdownBody(
                 data: item.content,
+                onTapLink: _onTapLink,
               ),
             ],
           ),
         )
       ],
     );
+  }
+
+  void _onTapLink(String href) {
+    launch(href);
   }
 
   Future _getData() async {

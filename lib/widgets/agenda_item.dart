@@ -14,11 +14,7 @@ class AgendaItem extends StatelessWidget {
       '5961 BL Horst\n';
   final subtitle = 'Bezoekadres';
   final title = 'Agenda';
-  final images = [
-    'http://kasteelhuysterhorst.nl/fotos/luchtfoto.jpg',
-    'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg',
-    'http://kasteelhuysterhorst.nl/fotos/kasteel1.jpg'
-  ];
+  final images = [];
 
   List<NetworkImage> _convertImages(images) {
     final networkImages = List<NetworkImage>();

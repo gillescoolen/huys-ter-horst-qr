@@ -20,11 +20,7 @@ class AboutItem extends StatelessWidget {
       '5961 BL Horst\n';
   final subtitle = 'Adres';
   final title = 'Kasteel Huys Ter Horst';
-  final images = [
-    'http://www.kasteelhuysterhorst.nl/fotos/DSC_0434.jpg',
-    'http://kasteelhuysterhorst.nl/fotos/luchtfoto.jpg',
-    'http://kasteelhuysterhorst.nl/fotos/kasteel1.jpg'
-  ];
+  final images = [];
 
   List<NetworkImage> _convertImages(images) {
     final networkImages = List<NetworkImage>();

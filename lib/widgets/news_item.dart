@@ -7,7 +7,7 @@ class NewsItem extends StatelessWidget {
   String title;
   String subtitle;
   String content;
-  List<dynamic> images;
+  List<dynamic> images = [];
   DateTime date;
 
   NewsItem(this.title, this.subtitle, this.content, this.images, this.date);
@@ -15,8 +15,11 @@ class NewsItem extends StatelessWidget {
   List<NetworkImage> _convertImages(images) {
     final networkImages = List<NetworkImage>();
 
-    networkImages.clear();
-    images.forEach((image) => networkImages.add(NetworkImage(image)));
+    if (images != null) {
+      networkImages.clear();
+      images.forEach((image) => networkImages.add(NetworkImage(image)));
+      return networkImages;
+    }
     return networkImages;
   }
 

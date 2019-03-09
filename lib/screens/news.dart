@@ -116,7 +116,6 @@ class NewsPost {
         assert(map['subtitle'] != null),
         assert(map['content'] != null),
         assert(map['date'] != null),
-        assert(map['images'] != null),
         title = map['title'],
         subtitle = map['subtitle'],
         content = map['content'],

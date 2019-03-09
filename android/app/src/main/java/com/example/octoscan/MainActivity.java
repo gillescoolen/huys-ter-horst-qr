@@ -1,4 +1,4 @@
-package com.example.huys_ter_horst;
+package nl.kasteelhuysterhorst.KasteelHuysTerHorst;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

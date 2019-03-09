@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:251107191570:android:c8b7b6127c56e994",
+        "mobilesdk_app_id": "1:251107191570:android:8913e08e944676a2",
         "android_client_info": {
-          "package_name": "com.example.huys_ter_horst"
+          "package_name": "nl.kasteelhuysterhorst.KasteelHuysTerHorst"
         }
       },
       "oauth_client": [

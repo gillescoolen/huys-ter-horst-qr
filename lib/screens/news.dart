@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:huys_ter_horst/screens/item.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/services.dart';
@@ -22,8 +23,10 @@ class _NewsState extends State<News> {
       floatingActionButton: FloatingActionButton(
         onPressed: scan,
         tooltip: 'Scan a QR code!',
-        child: Icon(
-          Icons.camera_alt,
+        child: SvgPicture.asset(
+          'lib/assets/qr-code.svg',
+          width: 25,
+          height: 25,
           color: Colors.white,
         ),
       ),
@@ -35,7 +38,6 @@ class _NewsState extends State<News> {
       stream: Firestore.instance.collection('news').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return LinearProgressIndicator();
-
         return _buildList(context, snapshot.data.documents);
       },
     );

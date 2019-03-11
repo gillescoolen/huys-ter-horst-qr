@@ -26,7 +26,6 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Colors.orange,
       ),
       home: MainPage(),
-      initialRoute: '/',
     );
   }
 }

@@ -48,7 +48,7 @@ class _ScannerState extends State<Scanner> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: scan,
-        tooltip: 'Scan a QR code!',
+        tooltip: 'Scan een QR Code.',
         child: Icon(
           Icons.camera_alt,
           color: Colors.white,

@@ -20,12 +20,14 @@ class _ItemState extends State<Item> {
   String code = "";
 
   _ItemState(this.code);
-
   List<NetworkImage> _convertImages(images) {
     final networkImages = List<NetworkImage>();
 
-    networkImages.clear();
-    images.forEach((image) => networkImages.add(NetworkImage(image)));
+    if (images != null) {
+      networkImages.clear();
+      images.forEach((image) => networkImages.add(NetworkImage(image)));
+      return networkImages;
+    }
     return networkImages;
   }
 
@@ -123,7 +125,6 @@ class ItemData {
       : assert(map['title'] != null),
         assert(map['subtitle'] != null),
         assert(map['content'] != null),
-        assert(map['images'] != null),
         title = map['title'],
         subtitle = map['subtitle'],
         content = map['content'],

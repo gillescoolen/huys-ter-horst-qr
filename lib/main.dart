@@ -1,5 +1,4 @@
 import 'package:huys_ter_horst/screens/home.dart';
-import 'package:huys_ter_horst/widgets/scanner.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(new MyApp());

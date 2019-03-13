@@ -3,7 +3,6 @@ import 'package:huys_ter_horst/widgets/item.dart';
 
 class ItemScreen extends StatelessWidget {
   String code = '';
-
   ItemScreen(this.code);
 
   @override

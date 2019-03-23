@@ -21,7 +21,13 @@ class _NewsState extends State<News> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _buildBody(context),
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('lib/assets/background.png'),
+                fit: BoxFit.cover)),
+        child: _buildBody(context),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: scan,
         tooltip: 'Scan a QR code!',

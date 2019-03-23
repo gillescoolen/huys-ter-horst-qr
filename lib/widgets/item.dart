@@ -8,14 +8,14 @@ import 'package:huys_ter_horst/data/item.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Item extends StatefulWidget {
-  String code = '';
+  final String code;
   Item(this.code);
   @override
   _ItemState createState() => new _ItemState(this.code);
 }
 
 class _ItemState extends State<Item> {
-  String code = "";
+  final String code;
   ItemData item;
   _ItemState(this.code);
 
@@ -85,7 +85,7 @@ class _ItemState extends State<Item> {
       return ListView(
         children: [
           SizedBox(
-            height: 550.0,
+            height: 350.0,
             child: Carousel(
               images: _convertImages(item.images),
               boxFit: BoxFit.cover,

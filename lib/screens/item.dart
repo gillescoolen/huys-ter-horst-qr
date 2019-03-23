@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:huys_ter_horst/widgets/item.dart';
 
 class ItemScreen extends StatelessWidget {
-  String code = '';
+  final String code;
   ItemScreen(this.code);
 
   @override

@@ -4,11 +4,11 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 
 class NewsItem extends StatelessWidget {
-  String title;
-  String subtitle;
-  String content;
-  List<dynamic> images = [];
-  DateTime date;
+  final String title;
+  final String subtitle;
+  final String content;
+  final List<dynamic> images;
+  final DateTime date;
 
   NewsItem(this.title, this.subtitle, this.content, this.images, this.date);
 

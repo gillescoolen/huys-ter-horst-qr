@@ -8,9 +8,8 @@ class NewsItem extends StatelessWidget {
   final String subtitle;
   final String content;
   final List<dynamic> images;
-  final DateTime date;
 
-  NewsItem(this.title, this.subtitle, this.content, this.images, this.date);
+  NewsItem(this.title, this.subtitle, this.content, this.images);
 
   List<NetworkImage> _convertImages(images) {
     final networkImages = List<NetworkImage>();

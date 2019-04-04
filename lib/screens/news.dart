@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_svg/svg.dart';
@@ -65,8 +64,15 @@ class _NewsState extends State<News> {
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey),
           borderRadius: BorderRadius.circular(5.0),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromRGBO(0, 0, 0, 0.3),
+              blurRadius: 5.0,
+              offset: Offset(1, 1),
+            ),
+          ],
         ),
         child: ListTile(
           title: Text(newspost.title),
@@ -80,7 +86,6 @@ class _NewsState extends State<News> {
                         newspost.subtitle,
                         newspost.content,
                         newspost.images,
-                        newspost.date,
                       ),
                 ),
               ),
@@ -117,7 +122,6 @@ class NewsPost {
   final String title;
   final String subtitle;
   final String content;
-  final DateTime date;
   final List<dynamic> images;
   final DocumentReference reference;
 
@@ -125,16 +129,14 @@ class NewsPost {
       : assert(map['title'] != null),
         assert(map['subtitle'] != null),
         assert(map['content'] != null),
-        assert(map['date'] != null),
         title = map['title'],
         subtitle = map['subtitle'],
         content = map['content'],
-        date = map['date'],
         images = map['images'];
 
   NewsPost.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
 
   @override
-  String toString() => "Record<$title:$subtitle:$content:$date:$images>";
+  String toString() => "Record<$title:$subtitle:$content:$images>";
 }

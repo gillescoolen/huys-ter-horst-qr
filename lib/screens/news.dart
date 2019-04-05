@@ -35,7 +35,6 @@ class _NewsState extends State<News> {
           'lib/assets/qr-code.svg',
           width: 25,
           height: 25,
-          color: Colors.white,
         ),
       ),
     );

@@ -22,9 +22,10 @@ class _NewsState extends State<News> {
     return Scaffold(
       body: DecoratedBox(
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('lib/assets/background.png'),
-                fit: BoxFit.cover)),
+          image: DecorationImage(
+              image: AssetImage('lib/assets/background.jpg'),
+              fit: BoxFit.cover),
+        ),
         child: _buildBody(context),
       ),
       floatingActionButton: FloatingActionButton(

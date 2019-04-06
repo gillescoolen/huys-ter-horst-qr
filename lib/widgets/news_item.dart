@@ -24,50 +24,89 @@ class NewsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: TextStyle(color: Colors.white)),
-        iconTheme: IconThemeData(color: Colors.white),
-      ),
-      body: ListView(
-        children: [
-          SizedBox(
-            height: 350.0,
-            child: Carousel(
-              images: _convertImages(images),
-              boxFit: BoxFit.cover,
-              autoplay: false,
-              overlayShadow: false,
-              dotBgColor: Colors.transparent,
-              dotSize: 6.0,
+    if (images == null) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(title, style: TextStyle(color: Colors.white)),
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
+        body: ListView(
+          children: [
+            Container(
+              padding: EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 24.0),
+                  ),
+                  Text(
+                    subtitle,
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.w700),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  MarkdownBody(
+                    data: content,
+                    onTapLink: _onTapLink,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(title, style: TextStyle(color: Colors.white)),
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
+        body: ListView(
+          children: [
+            SizedBox(
+              height: 350.0,
+              child: Carousel(
+                images: _convertImages(images),
+                boxFit: BoxFit.cover,
+                autoplay: false,
+                overlayShadow: false,
+                dotBgColor: Colors.transparent,
+                dotSize: 6.0,
+                animationCurve: Curves.easeIn,
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(15.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 32.0),
-                ),
-                Text(
-                  subtitle,
-                  style: TextStyle(fontSize: 23.0, fontWeight: FontWeight.w700),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                MarkdownBody(
-                  data: content,
-                  onTapLink: _onTapLink,
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
+            Container(
+              padding: EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 24.0),
+                  ),
+                  Text(
+                    subtitle,
+                    style:
+                        TextStyle(fontSize: 16.0, fontWeight: FontWeight.w700),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  MarkdownBody(
+                    data: content,
+                    onTapLink: _onTapLink,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    }
   }
 
   void _onTapLink(String href) {

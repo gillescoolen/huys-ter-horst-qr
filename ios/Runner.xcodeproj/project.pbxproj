@@ -475,7 +475,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.supertask.kasteelhuysterhorst;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.kasteelhuysterhorst.qr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -499,7 +499,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = nl.supertask.kasteelhuysterhorst;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.kasteelhuysterhorst.qr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

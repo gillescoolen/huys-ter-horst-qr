@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Huys ter Horst',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         accentColor: Colors.orangeAccent,
         primaryColor: Colors.orange,
       ),
